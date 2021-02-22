@@ -16,7 +16,7 @@ export async function up(knex: Knex): Promise<void> {
 
     table.double("longitude").notNullable()
 
-    table.json("operating_hour").notNullable()
+    table.json("operating_hours").notNullable()
 
     table.text("description").notNullable()
   })
