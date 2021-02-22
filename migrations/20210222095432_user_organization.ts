@@ -4,7 +4,7 @@ export async function up(knex: Knex): Promise<void> {
   await knex.schema.createTable("user_organization", (table) => {
     table.bigIncrements("id").primary()
 
-    table.bigInteger("user_id")
+    table.bigInteger("user_id").notNullable()
     table.foreign("user_id").references("user.id").onDelete("CASCADE")
 
     table.bigInteger("organization_id").notNullable()
