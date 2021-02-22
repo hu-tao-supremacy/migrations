@@ -8,7 +8,7 @@ export async function up(knex: Knex): Promise<void> {
     table
       .foreign("organization_id")
       .references("organization.id")
-      .onDelete("CASCASE");
+      .onDelete("CASCADE");
 
     table.bigInteger("event_location_id");
     table
