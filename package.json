@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "https://github.com/hu-tao-supremacy/migrations.git",
   "author": "FleeingSunlight <gh@fleeingsunlight.dev>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "knex": "^0.21.17"
+  }
 }
