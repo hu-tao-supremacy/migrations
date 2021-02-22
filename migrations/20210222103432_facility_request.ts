@@ -14,7 +14,7 @@ export async function up(knex: Knex): Promise<void> {
 
     table.text("reject_reason")
     table.timestamp("start", { useTz: true }).notNullable()
-    table.timestamp("end", { useTz: true }).notNullable()
+    table.timestamp("finish", { useTz: true }).notNullable()
   })
 }
 
