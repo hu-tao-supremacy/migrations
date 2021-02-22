@@ -5,13 +5,13 @@ export async function up(knex: Knex): Promise<void> {
     table.bigIncrements("id").primary();
 
     table.bigInteger("user_id");
-    table.foreign("user_id").references("user.id").onDelete("CASCASE");
+    table.foreign("user_id").references("user.id").onDelete("CASCADE");
 
     table.bigInteger("organization_id");
     table
       .foreign("organization_id")
       .references("organization.id")
-      .onDelete("CASCASE");
+      .onDelete("CASCADE");
   });
 }
 
