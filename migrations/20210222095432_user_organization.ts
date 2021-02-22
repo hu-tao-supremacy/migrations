@@ -1,0 +1,20 @@
+import * as Knex from "knex";
+
+export async function up(knex: Knex): Promise<void> {
+  await knex.schema.createTable("user_organization", (table) => {
+    table.bigIncrements("id").primary();
+
+    table.bigInteger("user_id");
+    table.foreign("user_id").references("user.id").onDelete("CASCASE");
+
+    table.bigInteger("organization_id");
+    table
+      .foreign("organization_id")
+      .references("organization.id")
+      .onDelete("CASCASE");
+  });
+}
+
+export async function down(knex: Knex): Promise<void> {
+  await knex.schema.dropTableIfExists("user_organization");
+}
