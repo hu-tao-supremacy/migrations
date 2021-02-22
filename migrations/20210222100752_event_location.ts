@@ -5,7 +5,7 @@ export async function up(knex: Knex): Promise<void> {
     table.bigIncrements("id").primary()
     table.text("name").notNullable()
     table.double("latitude").notNullable()
-    table.double("longtitude").notNullable()
+    table.double("longitude").notNullable()
   })
 }
 
