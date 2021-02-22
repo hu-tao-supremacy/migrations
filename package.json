@@ -1,0 +1,8 @@
+{
+  "name": "migrations",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/hu-tao-supremacy/migrations.git",
+  "author": "FleeingSunlight <gh@fleeingsunlight.dev>",
+  "license": "MIT"
+}
