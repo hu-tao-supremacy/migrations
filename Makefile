@@ -1,6 +1,13 @@
 migrate:
 	yarn knex --cwd . migrate:latest
 
+seed-dev:
+	export NODE_ENV=dev
+	knex seed:run --specific=clean.ts
+	knex seed:run --specific=user.ts
+	knex seed:run --specific=organization.ts
+	knex seed:run --specific=user_organization.ts
+
 seed-staging:
 	export NODE_ENV=staging
 	knex seed:run --specific=user.ts

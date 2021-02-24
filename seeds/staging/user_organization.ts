@@ -13,6 +13,7 @@ export async function seed(knex: Knex): Promise<void> {
         };
     });
 
+    // @ts-ignore
     const b: { user_id: number; organization_id: number }[] = new Array(100)
         .fill(undefined)
         .map((_) => {
