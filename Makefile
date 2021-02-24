@@ -9,6 +9,7 @@ seed-dev:
 	knex seed:run --specific=user_organization.ts
 	knex seed:run --specific=event_location.ts
 	knex seed:run --specific=tag.ts
+	knex seed:run --specific=event.ts
 
 seed-staging:
 	export NODE_ENV=staging
