@@ -1,13 +1,12 @@
-import * as Knex from "knex";
+import * as Knex from "knex"
+import faker from "faker"
 
 export async function seed(knex: Knex): Promise<void> {
-    // Deletes ALL existing entries
-    await knex("table_name").del();
-
-    // Inserts seed entries
-    await knex("table_name").insert([
-        { id: 1, colName: "rowValue1" },
-        { id: 2, colName: "rowValue2" },
-        { id: 3, colName: "rowValue3" }
-    ]);
-};
+  const data = new Array(200).fill(undefined).map((_) => {
+    return {
+      event_id: faker.random.number({ min: 1, max: 100 }),
+      feedback: faker.lorem.paragraph(),
+    }
+  })
+  await knex("event_feedback").insert(data)
+}

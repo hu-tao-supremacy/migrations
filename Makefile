@@ -14,6 +14,7 @@ seed-dev:
 	yarn knex seed:run --specific=event_duration.ts
 	yarn knex seed:run --specific=user_event.ts
 	yarn knex seed:run --specific=organization_permission.ts
+	yarn knex seed:run --specific=event_feedback.ts
 
 seed-staging:
 	export NODE_ENV=staging
