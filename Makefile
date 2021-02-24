@@ -12,6 +12,7 @@ seed-dev:
 	knex seed:run --specific=event.ts
 	knex seed:run --specific=facility.ts
 	knex seed:run --specific=event_duration.ts
+	knex seed:run --specific=user_event.ts
 
 seed-staging:
 	export NODE_ENV=staging
