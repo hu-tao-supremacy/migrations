@@ -23,11 +23,12 @@ export async function seed(knex: Knex): Promise<void> {
     const data = new Array(100)
         .fill(undefined)
         .map((_, i) => {
+            let organizationId = i + 1;
             return new Array(permissions.length)
                 .fill(undefined)
-                .map((index) => {
+                .map((_, index) => {
                     return {
-                        organization_id: i,
+                        organization_id: organizationId,
                         permission: permissions[index],
                     };
                 });
