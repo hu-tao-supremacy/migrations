@@ -2,9 +2,6 @@ import * as Knex from "knex"
 import * as faker from "faker"
 
 export async function seed(knex: Knex): Promise<void> {
-  // Deletes ALL existing entries
-  await knex("facility").del()
-
   const data = new Array(200).fill(undefined).map((_) => {
     const days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
     const d = faker.random.arrayElements(days)

@@ -2,9 +2,6 @@ import * as Knex from "knex"
 import * as faker from "faker"
 
 export async function seed(knex: Knex): Promise<void> {
-  // Deletes ALL existing entries
-  await knex("user_organization").del()
-
   const a = new Array(100).fill(undefined).map((_, i) => {
     const index = i + 1
     return {
