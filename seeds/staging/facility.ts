@@ -8,8 +8,8 @@ export async function seed(knex: Knex): Promise<void> {
     const a = d.map((day) => {
       return {
         day,
-        start: 10,
-        finish: 20,
+        start_hour: 10,
+        finish_hour: 20,
       }
     })
 
