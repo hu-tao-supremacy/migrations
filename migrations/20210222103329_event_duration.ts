@@ -9,7 +9,7 @@ export async function up(knex: Knex): Promise<void> {
 
     table.timestamp("start", { useTz: true }).notNullable()
 
-    table.timestamp("end", { useTz: true }).notNullable()
+    table.timestamp("finish", { useTz: true }).notNullable()
   })
 }
 
