@@ -7,11 +7,11 @@ export async function seed(knex: Knex): Promise<void> {
     let now = DateTime.now().setZone("Asia/Bangkok");
     let isPast = faker.random.boolean();
     let start = isPast ? now.minus({ months: 5 }) : now.plus({ months: 1 });
-    let end = start.plus({ hours: faker.random.number({ min: 1, max: 3 }) });
+    let finish = start.plus({ hours: faker.random.number({ min: 1, max: 3 }) });
     return {
       event_id: faker.random.number({ min: 1, max: 200 }),
       start: start.toISO(),
-      end: end.toISO(),
+      finish: finish.toISO(),
     };
   });
   await knex("event_duration").insert(data);
