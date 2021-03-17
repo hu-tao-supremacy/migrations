@@ -5,9 +5,9 @@ module.exports = {
     client: "postgresql",
     connection: {
       host: "localhost",
-      database: "postgres",
-      user: "jean",
-      password: "jean",
+      database: "hts",
+      user: "hu-tao-mains",
+      password: "hu-tao-mains",
       port: 5432,
     },
     seeds: {
