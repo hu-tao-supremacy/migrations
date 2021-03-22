@@ -11,6 +11,8 @@ export async function up(knex: Knex): Promise<void> {
     table.foreign("user_id").references("user.id").onDelete("CASCADE")
 
     table.enum("status", ["PENDING", "APPROVED", "REJECTED"]).notNullable()
+
+    table.unique(['event_id', 'user_id', 'status'])
   })
 }
 
