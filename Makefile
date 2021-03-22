@@ -16,3 +16,5 @@ seed: setup
 	yarn knex seed:run --specific=event_duration.ts
 	yarn knex seed:run --specific=user_event.ts
 	yarn knex seed:run --specific=organization_permission.ts
+
+all: migrate seed
