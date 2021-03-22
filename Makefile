@@ -1,7 +1,10 @@
-migrate:
+setup:
+	yarn install
+
+migrate: setup
 	yarn knex --cwd . migrate:latest
 
-seed:
+seed: setup
 	yarn knex seed:run --specific=clean.ts
 	yarn knex seed:run --specific=user.ts
 	yarn knex seed:run --specific=organization.ts
