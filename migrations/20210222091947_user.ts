@@ -8,6 +8,8 @@ export async function up(knex: Knex): Promise<void> {
     table.text("email").notNullable().unique()
     table.text("nickname")
     table.text("chula_id")
+    table.text("address")
+    table.text("profile_picture")
     table.boolean("is_chula_student").notNullable()
     table.enum("gender", ["M", "F", "NS"]).notNullable()
   })
