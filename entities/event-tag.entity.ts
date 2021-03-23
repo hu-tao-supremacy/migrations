@@ -1,7 +1,14 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Column,
+  Entity,
+  Index,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from "typeorm";
 import { Event } from "./event.entity";
 import { Tag } from "./tag.entity";
 
+@Index(["eventId", "tagId"], { unique: true })
 @Entity()
 export class EventTag {
   @PrimaryGeneratedColumn()
@@ -13,9 +20,9 @@ export class EventTag {
   @Column()
   tagId: number;
 
-  @ManyToOne(() => Event)
+  @ManyToOne(() => Event, { onDelete: "CASCADE" })
   event: Event;
 
-  @ManyToOne(() => Tag)
+  @ManyToOne(() => Tag, { onDelete: "CASCADE" })
   tag: Tag;
 }
