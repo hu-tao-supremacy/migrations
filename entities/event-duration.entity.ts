@@ -22,6 +22,6 @@ export class EventDuration {
   @Column("timestamptz")
   finish: string;
 
-  @ManyToOne(() => Event)
+  @ManyToOne(() => Event, { onDelete: "CASCADE" })
   event: Event;
 }
