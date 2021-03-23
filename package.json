@@ -14,7 +14,8 @@
     "pg": "^8.5.1",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.2.31",
-    "typeorm-naming-strategies": "^2.0.0"
+    "typeorm-naming-strategies": "^2.0.0",
+    "typeorm-seeding": "^1.6.1"
   },
   "devDependencies": {
     "@types/faker": "^5.1.7",
