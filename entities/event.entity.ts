@@ -45,6 +45,9 @@ export class Event {
   posterImageUrl?: string;
 
   @Column({ nullable: true })
+  posterImageHash?: string;
+
+  @Column({ nullable: true })
   profileImageUrl?: string;
 
   @Column({ nullable: true })
