@@ -12,9 +12,9 @@ export class EventTag {
   @Column()
   tagId: number;
 
-  @OneToOne(() => Event)
+  @ManyToOne(() => Event)
   event: Event;
 
-  @OneToOne(() => Tag)
+  @ManyToOne(() => Tag)
   tag: Tag;
 }
