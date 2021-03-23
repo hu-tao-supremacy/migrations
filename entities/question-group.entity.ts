@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class QuestionGroup {
@@ -7,6 +7,9 @@ export class QuestionGroup {
 
   @Column()
   eventId: number;
+
+  @ManyToOne(() => Event)
+  event: Event;
 
   @Column("enum", { enum: ["PRE_EVENT", "POST_EVENT"] })
   type: string;
