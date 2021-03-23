@@ -2,6 +2,7 @@ import {
   Column,
   Entity,
   Index,
+  JoinColumn,
   ManyToOne,
   OneToMany,
   OneToOne,
@@ -21,6 +22,10 @@ export class Event {
 
   @ManyToOne(() => Organization, { onDelete: "CASCADE" })
   organization: Organization;
+
+  @OneToOne(() => EventLocation)
+  @JoinColumn()
+  eventLocation: EventLocation;
 
   @Column()
   description: string;
