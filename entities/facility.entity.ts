@@ -12,7 +12,7 @@ export class Facility {
   @ManyToOne(() => Organization, { onDelete: "CASCADE" })
   organization: Organization;
 
-  @Column()
+  @Column({ unique: true })
   name: string;
 
   @Column()
