@@ -15,12 +15,6 @@ export class Answer {
   id: number;
 
   @Column()
-  userEventId: number;
-
-  @Column()
-  questionId: number;
-
-  @Column()
   value: string;
 
   @ManyToOne(() => UserEvent, { onDelete: "CASCADE" })
