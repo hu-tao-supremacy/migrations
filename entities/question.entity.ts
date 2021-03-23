@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { QuestionGroup } from "./question-group.entity";
 
 @Entity()
 export class Question {
@@ -7,6 +8,9 @@ export class Question {
 
   @Column()
   questionGroupId: number;
+
+  @ManyToOne(() => QuestionGroup)
+  questionGroup: QuestionGroup;
 
   @Column()
   order: number;
