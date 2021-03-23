@@ -8,5 +8,7 @@ export default {
   password: "hu-tao-mains",
   port: "5432",
   entities: ["entities/*.ts"],
+  seeds: ["seeds/e2e/*.ts"],
+  factories: ["factories/*.ts"],
   namingStrategy: new SnakeNamingStrategy(),
 };
