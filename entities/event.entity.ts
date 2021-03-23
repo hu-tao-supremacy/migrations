@@ -9,6 +9,7 @@ import {
   PrimaryGeneratedColumn,
 } from "typeorm";
 import { EventLocation } from "./event-location.entity";
+import { Location } from "./location.entity";
 import { Organization } from "./organization.entity";
 
 @Index(["organizationId", "name"], { unique: true })
@@ -23,9 +24,11 @@ export class Event {
   @ManyToOne(() => Organization, { onDelete: "CASCADE" })
   organization: Organization;
 
-  @OneToOne(() => EventLocation)
-  @JoinColumn()
-  eventLocation: EventLocation;
+  @Column({ nullable: true })
+  locationId?: number;
+
+  @ManyToOne(() => Location)
+  location?: Location;
 
   @Column()
   description: string;
