@@ -16,7 +16,7 @@ export class FacilityRequest {
   @Column()
   facilityId: number;
 
-  @ManyToOne(() => Facility)
+  @ManyToOne(() => Facility, { onDelete: "CASCADE" })
   facility: Facility;
 
   @Column("enum", { enum: ["PENDING", "APPROVED", "REJECTED"] })
