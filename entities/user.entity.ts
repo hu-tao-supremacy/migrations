@@ -17,7 +17,7 @@ export class User {
   @Column({ nullable: true })
   nickname?: string;
 
-  @Index({ unique: true, where: "chulaId IS NOT NULL" })
+  @Index({ unique: true, where: "chula_id IS NOT NULL" })
   @Column({ nullable: true })
   chulaId?: string;
 
