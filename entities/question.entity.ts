@@ -1,6 +1,13 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Column,
+  Entity,
+  Index,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from "typeorm";
 import { QuestionGroup } from "./question-group.entity";
 
+@Index(["questionGroupId", "order"], { unique: true })
 @Entity()
 export class Question {
   @PrimaryGeneratedColumn()
@@ -9,7 +16,7 @@ export class Question {
   @Column()
   questionGroupId: number;
 
-  @ManyToOne(() => QuestionGroup)
+  @ManyToOne(() => QuestionGroup, { onDelete: "CASCADE" })
   questionGroup: QuestionGroup;
 
   @Column()
