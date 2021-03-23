@@ -8,7 +8,7 @@ import {
 import { Event } from "./event.entity";
 
 @Index(["eventId", "type"], { unique: true })
-@Index(["eventId", "order"], { unique: true })
+@Index(["type", "order"], { unique: true })
 @Entity()
 export class QuestionGroup {
   @PrimaryGeneratedColumn()
