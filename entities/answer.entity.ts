@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Question } from "./question.entity";
+import { UserEvent } from "./user-event.entity";
 
 @Entity()
 export class Answer {
@@ -13,4 +15,10 @@ export class Answer {
 
   @Column()
   value: string;
+
+  @ManyToOne(() => UserEvent)
+  userEvent: UserEvent;
+
+  @ManyToOne(() => Question)
+  question: Question;
 }
