@@ -17,12 +17,12 @@ export class UserInterest {
   @Column()
   userId: number;
 
-  @ManyToOne(() => User)
+  @ManyToOne(() => User, { onDelete: "CASCADE" })
   user: User;
 
   @Column()
   tagId: number;
 
-  @ManyToOne(() => Tag)
+  @ManyToOne(() => Tag, { onDelete: "CASCADE" })
   tag: Tag;
 }
