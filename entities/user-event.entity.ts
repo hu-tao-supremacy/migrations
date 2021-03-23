@@ -18,7 +18,7 @@ export class UserEvent {
   @Column()
   userId: number;
 
-  @ManyToOne(() => User)
+  @ManyToOne(() => User, { onDelete: "CASCADE" })
   user: User;
 
   @Column()
