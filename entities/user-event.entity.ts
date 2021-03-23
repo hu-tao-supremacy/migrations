@@ -24,7 +24,7 @@ export class UserEvent {
   @Column()
   eventId: number;
 
-  @ManyToOne(() => Event)
+  @ManyToOne(() => Event, { onDelete: "CASCADE" })
   event: Event;
 
   @Column({ nullable: true })
