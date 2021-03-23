@@ -25,9 +25,7 @@ export class Event {
   @Column({ nullable: true })
   eventLocationId?: number;
 
-  @OneToMany(() => EventLocation, (eventLocation) => eventLocation.event, {
-    onDelete: "CASCADE",
-  })
+  @OneToMany(() => EventLocation, (eventLocation) => eventLocation.event)
   eventLocation?: EventLocation;
 
   @Column()
