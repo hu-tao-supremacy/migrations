@@ -18,3 +18,6 @@ seed: setup
 	yarn knex seed:run --specific=organization_permission.ts
 
 all: migrate seed
+
+sync:
+	yarn typeorm schema:sync
