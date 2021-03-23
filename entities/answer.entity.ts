@@ -23,9 +23,9 @@ export class Answer {
   @Column()
   value: string;
 
-  @ManyToOne(() => UserEvent)
+  @ManyToOne(() => UserEvent, { onDelete: "CASCADE" })
   userEvent: UserEvent;
 
-  @ManyToOne(() => Question)
+  @ManyToOne(() => Question, { onDelete: "CASCADE" })
   question: Question;
 }
