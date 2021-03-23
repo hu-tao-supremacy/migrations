@@ -25,6 +25,6 @@ export class EventLocation {
   @OneToOne(() => Event)
   event: Event;
 
-  @ManyToOne(() => Location)
+  @ManyToOne(() => Location, { onDelete: "CASCADE" })
   location: Location;
 }
