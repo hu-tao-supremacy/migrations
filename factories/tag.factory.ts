@@ -1,8 +1,9 @@
 import { define } from "typeorm-seeding";
 import { Tag } from "../entities/tag.entity";
+import { wordGroup } from "./random";
 
 define(Tag, (faker) => {
   const tag = new Tag();
-  tag.name = `${faker.lorem.word(1)} - ${faker.random.alphaNumeric(6)}`;
+  tag.name = wordGroup();
   return tag;
 });
