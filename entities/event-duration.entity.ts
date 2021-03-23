@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Event } from "./event.entity";
 
 @Entity()
 export class EventDuration {
@@ -13,4 +14,7 @@ export class EventDuration {
 
   @Column("timestamptz")
   finish: string;
+
+  @ManyToOne(() => Event)
+  event: Event;
 }
