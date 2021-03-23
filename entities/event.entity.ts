@@ -22,12 +22,6 @@ export class Event {
   @ManyToOne(() => Organization, { onDelete: "CASCADE" })
   organization: Organization;
 
-  @Column({ nullable: true })
-  eventLocationId?: number;
-
-  @OneToMany(() => EventLocation, (eventLocation) => eventLocation.event)
-  eventLocation?: EventLocation;
-
   @Column()
   description: string;
 
