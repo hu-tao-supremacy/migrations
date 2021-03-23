@@ -11,7 +11,7 @@ define(UserEvent, (faker) => {
   userEvent.status = isApproved
     ? "APPROVED"
     : faker.random.arrayElement(["PENDING", "REJECTED"]);
-  userEvent.ticket = isApproved ? faker.random.alphaNumeric(6) : null;
+  userEvent.ticket = isApproved ? faker.random.alphaNumeric(6).toUpperCase() : null;
   userEvent.rating = isApproved ? faker.random.number(5) : null;
   return userEvent;
 });
