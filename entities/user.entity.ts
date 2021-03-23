@@ -1,4 +1,4 @@
-import { PrimaryGeneratedColumn, Column, Entity } from "typeorm";
+import { PrimaryGeneratedColumn, Column, Entity, Index } from "typeorm";
 
 @Entity()
 export class User {
@@ -17,6 +17,7 @@ export class User {
   @Column({ nullable: true })
   nickname?: string;
 
+  @Index({ unique: true, where: "chulaId IS NOT NULL" })
   @Column({ nullable: true })
   chulaId?: string;
 
