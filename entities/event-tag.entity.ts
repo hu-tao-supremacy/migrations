@@ -1,4 +1,5 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Event } from "./event.entity";
 import { Tag } from "./tag.entity";
 
 @Entity()
