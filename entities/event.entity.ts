@@ -8,7 +8,6 @@ import {
   OneToOne,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { EventLocation } from "./event-location.entity";
 import { Location } from "./location.entity";
 import { Organization } from "./organization.entity";
 
