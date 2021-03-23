@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Facility } from "./facility.entity";
 
 @Entity()
 export class FacilityRequest {
@@ -8,8 +9,14 @@ export class FacilityRequest {
   @Column()
   eventId: number;
 
+  @ManyToOne(() => Event)
+  event: Event;
+
   @Column()
   facilityId: number;
+
+  @ManyToOne(() => Facility)
+  facility: Facility;
 
   @Column("enum", { enum: ["PENDING", "APPROVED", "REJECTED"] })
   status: string;
