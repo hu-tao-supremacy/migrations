@@ -9,7 +9,7 @@ export class Facility {
   @Column()
   organizationId: number;
 
-  @ManyToOne(() => Organization)
+  @ManyToOne(() => Organization, { onDelete: "CASCADE" })
   organization: Organization;
 
   @Column()
