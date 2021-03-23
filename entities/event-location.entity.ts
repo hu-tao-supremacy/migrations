@@ -9,6 +9,7 @@ import {
 import { Event } from "./event.entity";
 import { Location } from "./location.entity";
 
+@Index(["eventId", "locationId"], { unique: true })
 @Entity()
 export class EventLocation {
   @PrimaryGeneratedColumn()
