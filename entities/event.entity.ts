@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { EventLocation } from "./event-location.entity";
 
 @Entity()
 export class Event {
@@ -10,6 +11,9 @@ export class Event {
 
   @Column({ nullable: true })
   eventLocationId?: number;
+
+  @OneToOne(EventLocation)
+  eventLocation?: EventLocation;
 
   @Column()
   description: string;
