@@ -1,7 +1,14 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Column,
+  Entity,
+  Index,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from "typeorm";
 import { Tag } from "./tag.entity";
 import { User } from "./user.entity";
 
+@Index(["userId", "tagId"], { unique: true })
 @Entity()
 export class UserInterest {
   @PrimaryGeneratedColumn()
