@@ -1,5 +1,12 @@
-import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Column,
+  Entity,
+  ManyToOne,
+  OneToOne,
+  PrimaryGeneratedColumn,
+} from "typeorm";
 import { EventLocation } from "./event-location.entity";
+import { Organization } from "./organization.entity";
 
 @Entity()
 export class Event {
@@ -9,10 +16,13 @@ export class Event {
   @Column()
   organizationId: number;
 
+  @ManyToOne(() => Organization)
+  organization: Organization;
+
   @Column({ nullable: true })
   eventLocationId?: number;
 
-  @OneToOne(EventLocation)
+  @OneToOne(() => EventLocation)
   eventLocation?: EventLocation;
 
   @Column()
