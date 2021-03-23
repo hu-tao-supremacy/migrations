@@ -3,9 +3,9 @@ import { Organization } from "../entities/organization.entity";
 
 define(Organization, (faker) => {
   const org = new Organization();
-  org.name = faker.company.companyName();
+  org.name = `${faker.company.companyName()} - ${faker.random.alphaNumeric(4).toUpperCase()}`
   org.isVerified = faker.random.boolean();
-  org.abbreviation = faker.random.alphaNumeric(4);
+  org.abbreviation = faker.random.alphaNumeric(4).toUpperCase();
   org.advisor = faker.name.firstName();
   org.associatedFaculty = faker.company.companyName();
   org.description = faker.lorem.paragraph();
