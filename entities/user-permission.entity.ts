@@ -1,6 +1,13 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import {User} from "./user.entity";
+import {
+  Column,
+  Entity,
+  Index,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from "typeorm";
+import { User } from "./user.entity";
 
+@Index(["userId", "permissionName"], { unique: true })
 @Entity()
 export class UserPermission {
   @PrimaryGeneratedColumn()
@@ -9,7 +16,7 @@ export class UserPermission {
   @Column()
   userId: number;
 
-  @ManyToOne(() => User)
+  @ManyToOne(() => User, { onDelete: "CASCADE" })
   user: User;
 
   @Column()
