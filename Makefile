@@ -1,9 +1,6 @@
 setup:
 	yarn install
 
-migrate: setup
-	yarn knex --cwd . migrate:latest
-
 seed: setup
 	yarn knex seed:run --specific=clean.ts
 	yarn knex seed:run --specific=user.ts
@@ -19,5 +16,5 @@ seed: setup
 
 all: migrate seed
 
-sync:
+sync: setup
 	yarn typeorm schema:sync
