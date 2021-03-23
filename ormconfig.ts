@@ -1,3 +1,5 @@
+import { SnakeNamingStrategy } from "typeorm-naming-strategies";
+
 export default {
   type: "postgres",
   host: "localhost",
@@ -6,4 +8,5 @@ export default {
   password: "hu-tao-mains",
   port: "5432",
   entities: ["entities/*.ts"],
+  namingStrategy: new SnakeNamingStrategy(),
 };
