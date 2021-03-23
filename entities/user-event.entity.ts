@@ -30,8 +30,8 @@ export class UserEvent {
   @Column({ nullable: true })
   rating?: number;
 
-  @Column()
-  ticket: string;
+  @Column({ nullable: true })
+  ticket?: string;
 
   @Column("enum", { enum: ["PENDING", "APPROVED", "REJECT"] })
   status: string;
