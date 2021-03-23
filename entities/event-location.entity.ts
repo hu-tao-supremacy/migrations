@@ -20,7 +20,7 @@ export class EventLocation {
   @Column()
   locationId: number;
 
-  @OneToMany(() => Event, (event) => event.eventLocation)
+  @OneToOne(() => Event)
   event: Event;
 
   @ManyToOne(() => Location)
