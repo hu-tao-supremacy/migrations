@@ -1,9 +1,10 @@
 import { define } from "typeorm-seeding";
 import { Organization } from "../entities/organization.entity";
+import { wordGroup } from "./random";
 
 define(Organization, (faker) => {
   const org = new Organization();
-  org.name = `${faker.company.companyName()} - ${faker.random.alphaNumeric(4).toUpperCase()}`
+  org.name = wordGroup();
   org.isVerified = faker.random.boolean();
   org.abbreviation = faker.random.alphaNumeric(4).toUpperCase();
   org.advisor = faker.name.firstName();
