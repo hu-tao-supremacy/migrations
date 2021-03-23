@@ -1,6 +1,7 @@
 import { define, factory } from "typeorm-seeding";
 import { Event } from "../entities/event.entity";
 import { Organization } from "../entities/organization.entity";
+import { Location } from "../entities/location.entity";
 
 define(Event, (faker) => {
   const hasLocation = faker.random.boolean();
