@@ -1,7 +1,14 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Column,
+  Entity,
+  Index,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from "typeorm";
 import { Question } from "./question.entity";
 import { UserEvent } from "./user-event.entity";
 
+@Index(["userEventId", "questionId"], { unique: true })
 @Entity()
 export class Answer {
   @PrimaryGeneratedColumn()
