@@ -33,6 +33,6 @@ export class UserEvent {
   @Column({ nullable: true })
   ticket?: string;
 
-  @Column("enum", { enum: ["PENDING", "APPROVED", "REJECT"] })
+  @Column("enum", { enum: ["PENDING", "APPROVED", "REJECTED"] })
   status: string;
 }
