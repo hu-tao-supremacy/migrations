@@ -22,7 +22,7 @@ export class EventLocation {
   @Column()
   locationId: number;
 
-  @OneToOne(() => Event)
+  @ManyToOne(() => Event)
   event: Event;
 
   @ManyToOne(() => Location, { onDelete: "CASCADE" })
