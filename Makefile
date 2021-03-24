@@ -4,7 +4,10 @@ setup:
 seed: setup
 	yarn seed:run
 
-all: migrate seed
+all: drop migrate seed
 
 sync: setup
 	yarn typeorm schema:sync
+
+drop: setup
+	yarn typeorm schema:drop
