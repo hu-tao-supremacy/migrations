@@ -5,7 +5,7 @@ import { wordGroup } from "./random";
 
 define(Question, (faker) => {
   let question = new Question();
-  question.title = `${wordGroup}?`;
+  question.title = `${wordGroup()}?`;
   question.subtitle = faker.lorem.sentence();
   question.answerType = faker.random.arrayElement(["SCALE", "TEXT"]);
   question.isOptional = faker.random.boolean();
