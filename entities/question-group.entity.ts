@@ -3,9 +3,11 @@ import {
   Entity,
   Index,
   ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
 } from "typeorm";
 import { Event } from "./event.entity";
+import { Question } from "./question.entity";
 
 @Index(["eventId", "type"], { unique: true })
 @Index(["type", "order"], { unique: true })
@@ -28,4 +30,7 @@ export class QuestionGroup {
 
   @Column()
   title: string;
+
+  @OneToMany(() => Question, (question) => question.questionGroup)
+  questions: Question[];
 }
