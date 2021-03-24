@@ -57,6 +57,9 @@ export class Event {
   @Column()
   attendeeLimit: number;
 
+  @Column({ nullable: true })
+  contact?: string;
+
   @OneToMany(() => QuestionGroup, (questionGroup) => questionGroup.event)
   questionGroups: QuestionGroup[];
 }
