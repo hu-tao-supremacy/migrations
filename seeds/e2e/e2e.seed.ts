@@ -4,6 +4,7 @@ import { EventTag } from "../../entities/event-tag.entity";
 import { UserEvent } from "../../entities/user-event.entity";
 import faker from "faker";
 import { UserOrganization } from "../../entities/user-organization.entity";
+import { EventDuration } from "../../entities/event-duration.entity";
 
 export default class E2E implements Seeder {
   public async run(factory: Factory, connection: Connection): Promise<any> {
@@ -22,6 +23,12 @@ export default class E2E implements Seeder {
         userOrg.user = faker.random.arrayElement(userArray);
         userOrg.organization = faker.random.arrayElement(organizationArray);
         return userOrg;
+      })
+      .createMany(50);
+    const eventDurationArray = await factory(EventDuration)()
+      .map(async (eventDuration: EventDuration) => {
+        eventDuration.event = faker.random.arrayElement(eventArray);
+        return eventDuration;
       })
       .createMany(50);
   }
