@@ -36,7 +36,9 @@ export default class E2E implements Seeder {
       })
       .createMany(50);
 
-    {
+    async function generateQuestionGroupsWithQuestions(
+      groupType: "PRE_EVENT" | "POST_EVENT"
+    ) {
       const questionGroupOptions: any = {};
       questionGroupOptions.n = 5;
       questionGroupOptions.idx = 0;
@@ -53,7 +55,7 @@ export default class E2E implements Seeder {
         .map(async (group: QuestionGroup) => {
           group.event = questionGroupMapping[questionGroupOptions.idx].event;
           group.order = questionGroupMapping[questionGroupOptions.idx].order;
-          group.type = "PRE_EVENT";
+          group.type = groupType;
           questionGroupOptions.idx++;
           return group;
         })
@@ -81,5 +83,10 @@ export default class E2E implements Seeder {
         })
         .createMany(questionGroupArray.length * questionOptions.n);
     }
+
+    await Promise.all([
+      generateQuestionGroupsWithQuestions("PRE_EVENT"),
+      generateQuestionGroupsWithQuestions("POST_EVENT"),
+    ]);
   }
 }
