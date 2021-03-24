@@ -5,19 +5,19 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { User } from "./user.entity";
+import { UserOrganization } from "./user-organization.entity";
 
-@Index(["userId", "permissionName"], { unique: true })
+@Index(["userOrganizationId", "permissionName"], { unique: true })
 @Entity()
 export class UserPermission {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  userId: number;
+  userOrganizationId: number;
 
-  @ManyToOne(() => User, { onDelete: "CASCADE" })
-  user: User;
+  @ManyToOne(() => UserOrganization, { onDelete: "CASCADE" })
+  userOrganization: UserOrganization;
 
   @Column()
   permissionName: string;
