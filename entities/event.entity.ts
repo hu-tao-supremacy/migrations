@@ -10,6 +10,7 @@ import {
 } from "typeorm";
 import { Location } from "./location.entity";
 import { Organization } from "./organization.entity";
+import { QuestionGroup } from "./question-group.entity";
 
 @Index(["organizationId", "name"], { unique: true })
 @Entity()
@@ -55,4 +56,7 @@ export class Event {
 
   @Column()
   attendeeLimit: number;
+
+  @OneToMany(() => QuestionGroup, (questionGroup) => questionGroup.event)
+  questionGroups: QuestionGroup[];
 }
