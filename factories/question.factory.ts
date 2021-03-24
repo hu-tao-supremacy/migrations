@@ -9,6 +9,5 @@ define(Question, (faker) => {
   question.subtitle = faker.lorem.sentence();
   question.answerType = faker.random.arrayElement(["SCALE", "TEXT"]);
   question.isOptional = faker.random.boolean();
-  question.questionGroup = factory(QuestionGroup)() as any;
   return question;
 });
