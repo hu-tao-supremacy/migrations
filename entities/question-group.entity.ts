@@ -22,7 +22,7 @@ export class QuestionGroup {
   event: Event;
 
   @Column("enum", { enum: ["PRE_EVENT", "POST_EVENT"] })
-  type: string;
+  questionType: string;
 
   @Column()
   order: number;

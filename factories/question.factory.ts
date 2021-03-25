@@ -8,6 +8,6 @@ define(Question, (faker) => {
   question.title = `${wordGroup()}?`;
   question.subtitle = faker.lorem.sentence();
   question.answerType = faker.random.arrayElement(["SCALE", "TEXT"]);
-  question.isOptional = faker.random.boolean();
+  question.optional = faker.random.boolean();
   return question;
 });

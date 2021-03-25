@@ -26,7 +26,7 @@ export class Question {
   answerType: string;
 
   @Column({ default: false })
-  isOptional: boolean;
+  optional: boolean;
 
   @Column()
   title: string;

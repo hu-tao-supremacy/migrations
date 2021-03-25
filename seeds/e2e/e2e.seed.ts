@@ -55,7 +55,7 @@ export default class E2E implements Seeder {
         .map(async (group: QuestionGroup) => {
           group.event = questionGroupMapping[questionGroupOptions.idx].event;
           group.order = questionGroupMapping[questionGroupOptions.idx].order;
-          group.type = groupType;
+          group.questionType = groupType;
           questionGroupOptions.idx++;
           return group;
         })
