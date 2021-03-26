@@ -25,7 +25,7 @@ export class QuestionGroup {
   type: string;
 
   @Column()
-  order: number;
+  seq: number;
 
   @Column()
   title: string;

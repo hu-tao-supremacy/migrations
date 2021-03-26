@@ -20,7 +20,7 @@ export class Question {
   questionGroup: QuestionGroup;
 
   @Column()
-  order: number;
+  seq: number;
 
   @Column("enum", { enum: ["SCALE", "TEXT"] })
   answerType: string;

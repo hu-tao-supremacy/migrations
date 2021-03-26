@@ -54,7 +54,7 @@ export default class E2E implements Seeder {
       const questionGroupArray = await factory(QuestionGroup)()
         .map(async (group: QuestionGroup) => {
           group.event = questionGroupMapping[questionGroupOptions.idx].event;
-          group.order = questionGroupMapping[questionGroupOptions.idx].order;
+          group.seq = questionGroupMapping[questionGroupOptions.idx].order;
           group.type = groupType;
           questionGroupOptions.idx++;
           return group;
@@ -77,7 +77,7 @@ export default class E2E implements Seeder {
         .map(async (question: Question) => {
           question.questionGroupId =
             questionMapping[questionOptions.idx].groupId;
-          question.order = questionMapping[questionOptions.idx].order;
+          question.seq = questionMapping[questionOptions.idx].order;
           questionOptions.idx++;
           return question;
         })
