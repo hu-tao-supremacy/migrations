@@ -7,7 +7,7 @@ import {
 } from "typeorm";
 import { QuestionGroup } from "./question-group.entity";
 
-@Index(["questionGroupId", "order"], { unique: true })
+@Index(["questionGroupId", "seq"], { unique: true })
 @Entity()
 export class Question {
   @PrimaryGeneratedColumn()
