@@ -33,6 +33,6 @@ export class User {
   @Column({ default: false })
   didSetup: boolean = false;
 
-  @Column("enum", { enum: ["M", "F", "NS"] })
+  @Column("enum", { enum: ['__RESERVED__', "M", "F", "NS"] })
   gender: string;
 }

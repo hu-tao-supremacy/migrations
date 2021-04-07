@@ -22,7 +22,7 @@ export class Question {
   @Column()
   seq: number;
 
-  @Column("enum", { enum: ["SCALE", "TEXT"] })
+  @Column("enum", { enum: ["__RESERVED__", "SCALE", "TEXT"] })
   answerType: string;
 
   @Column({ default: false })

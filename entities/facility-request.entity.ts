@@ -19,7 +19,7 @@ export class FacilityRequest {
   @ManyToOne(() => Facility, { onDelete: "CASCADE" })
   facility: Facility;
 
-  @Column("enum", { enum: ["PENDING", "APPROVED", "REJECTED"] })
+  @Column("enum", { enum: ['__RESERVED__', "PENDING", "APPROVED", "REJECTED"] })
   status: string;
 
   @Column({ nullable: true })

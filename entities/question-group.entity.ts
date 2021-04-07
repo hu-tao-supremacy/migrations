@@ -21,7 +21,7 @@ export class QuestionGroup {
   @ManyToOne(() => Event, { onDelete: "CASCADE" })
   event: Event;
 
-  @Column("enum", { enum: ["PRE_EVENT", "POST_EVENT"] })
+  @Column("enum", { enum: ['__RESERVED__', "PRE_EVENT", "POST_EVENT"] })
   type: string;
 
   @Column()
