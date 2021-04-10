@@ -25,6 +25,18 @@ export class User {
   address?: string;
 
   @Column({ nullable: true })
+  phoneNumber?: string;
+
+  @Column({ nullable: true })
+  district?: string;
+
+  @Column({ nullable: true })
+  province?: string;
+
+  @Column({ nullable: true })
+  zipCode?: string;
+
+  @Column({ nullable: true })
   profilePictureUrl?: string;
 
   @Column()
