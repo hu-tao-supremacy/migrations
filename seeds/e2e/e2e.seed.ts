@@ -40,7 +40,7 @@ export default class E2E implements Seeder {
       groupType: "PRE_EVENT" | "POST_EVENT"
     ) {
       const questionGroupOptions: any = {};
-      questionGroupOptions.n = 5;
+      questionGroupOptions.n = groupType === "PRE_EVENT" ? 1 : 5;
       questionGroupOptions.idx = 0;
 
       const questionGroupMapping: { event: Event; order: number }[] = _.flatMap(
