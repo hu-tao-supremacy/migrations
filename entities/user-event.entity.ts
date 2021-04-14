@@ -33,8 +33,8 @@ export class UserEvent {
   @Column({ nullable: true })
   ticket?: string;
 
-  @Column({ nullable: true })
-  isInterested?: boolean;
+  @Column({ nullable: false, default: false })
+  isInternal: boolean = false;
 
   @Column("enum", { enum: ["__RESERVED__", "PENDING", "APPROVED", "REJECTED"] })
   status: string;
