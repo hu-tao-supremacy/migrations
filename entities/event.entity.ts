@@ -57,6 +57,9 @@ export class Event {
   @Column()
   attendeeLimit: number;
 
+  @Column("timestamptz")
+  registrationDueDate: string;
+
   @Column({ nullable: true })
   contact?: string;
 
