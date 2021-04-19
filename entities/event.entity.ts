@@ -57,7 +57,7 @@ export class Event {
   @Column()
   attendeeLimit: number;
 
-  @Column({ type: "timestamptz", default: () => "CURRENT_TIMESTAMP" })
+  @Column({ type: "timestamptz", default: () => "now()" })
   registrationDueDate: string;
 
   @Column({ nullable: true })
