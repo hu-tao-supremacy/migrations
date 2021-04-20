@@ -36,6 +36,8 @@ export class UserEvent {
   @Column({ nullable: false, default: false })
   isInternal: boolean = false;
 
-  @Column("enum", { enum: ["__RESERVED__", "PENDING", "APPROVED", "REJECTED"] })
+  @Column("enum", {
+    enum: ["__RESERVED__", "PENDING", "APPROVED", "REJECTED", "ATTENDED"],
+  })
   status: string;
 }
