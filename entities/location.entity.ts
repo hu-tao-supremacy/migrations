@@ -19,4 +19,7 @@ export class Location {
 
   @Column({ nullable: true })
   travelInformationImageHash?: string;
+
+  @Column()
+  isOnline: boolean = false;
 }
