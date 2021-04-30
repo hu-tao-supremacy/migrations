@@ -10,7 +10,7 @@ import { Event } from "./event.entity";
 
 @Index(["eventId"], { unique: true })
 @Entity()
-export class EventVector {
+export class EventRecommendation {
     @PrimaryGeneratedColumn()
     id: number;
 
@@ -22,5 +22,8 @@ export class EventVector {
     event: Event;
 
     @Column("float", { array: true })
-    vector: number[];
+    event_vector: number[];
+
+    @Column("json", { nullable: true })
+    score: string;
 }
