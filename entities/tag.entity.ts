@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Tag {
@@ -7,4 +7,10 @@ export class Tag {
 
   @Column({ unique: true })
   name: string;
+
+  @Column()
+  imageUrl: string;
+
+  @Column()
+  imageHash: string;
 }
